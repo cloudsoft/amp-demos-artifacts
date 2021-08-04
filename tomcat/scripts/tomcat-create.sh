@@ -28,7 +28,7 @@ if [ -f /usr/local/tomcat/bin/startup.sh ] ; then
   echo "Tomcat already installed."
 else
   sudo mkdir /usr/local/tomcat
-  sudo tar xf ${TOMCAT_gz} -C /usr/local/tomcat --strip-components=1
+  curl ${TOMCAT_gz} | sudo tar x -C /usr/local/tomcat --strip-components=1
   sudo chmod 750 /usr/local/tomcat/bin
   sudo sed --in-place 's#<Connector port="8080" protocol="HTTP/1.1"#\0 address="0.0.0.0"#g' /usr/local/tomcat/conf/server.xml
 fi
