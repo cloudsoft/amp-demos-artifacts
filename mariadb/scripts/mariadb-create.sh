@@ -14,7 +14,7 @@ else
   done
 
   ## Install the MariaDB server
-  sudo apt update && sudo apt -y upgrade # required because a system upgrade is necessary to support maria-db
+  ## sudo apt update && sudo apt -y upgrade # required because a system upgrade is necessary to support maria-db
   if [ ! -z "${DB_gz}" ] ; then
     curl -L -k -f -o mariadb.tar.gz "${DB_gz}"
   fi
