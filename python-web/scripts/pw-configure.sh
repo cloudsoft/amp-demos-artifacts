@@ -11,7 +11,7 @@ cat > index.html << eof
   <pre>
   `ifconfig | grep inet`
   </pre>
-  
-  eof
+
+eof
 
 
