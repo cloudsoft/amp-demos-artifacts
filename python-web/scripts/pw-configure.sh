@@ -1,5 +1,5 @@
 # create the web page to serve
-cat > index.html << eof
+cat > /tmp/index.html << eof
 
   hello world.
   <p>
