@@ -1,7 +1,8 @@
-# install python if not present
-which python || \
-{ apt-get update && apt-get install python ; } || \
-{ yum update && yum install python ; } || \
-{ echo WARNING: cannot install python && exit 1 ; }
+#!/bin/bash
 
+echo 'Install python if not present'
 
+sudo which python || \
+ { sudo apt-get update && sudo apt-get install -y python ; } || \
+ { sudo yum update && sudo yum install python ; } || \
+ { sudo echo WARNING: cannot install python && exit 1 ; }
