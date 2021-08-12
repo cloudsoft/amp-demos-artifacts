@@ -13,7 +13,7 @@ else
      sleep 5
   done
 
-  sudo apt --assume-ye install mariadb-server
+  sudo apt --assume-yes install mariadb-server
 
   sudo systemctl stop mariadb
 
