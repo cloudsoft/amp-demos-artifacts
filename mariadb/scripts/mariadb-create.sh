@@ -13,20 +13,7 @@ else
      sleep 5
   done
 
-  ## Install the MariaDB server
-  ## sudo apt update && sudo apt -y upgrade # required because a system upgrade is necessary to support maria-db
-  if [ ! -z "${DB_gz}" ] ; then
-    curl -L -k -f -o mariadb.tar.gz "${DB_gz}"
-  fi
-  tar xf mariadb.tar.gz
-  PREV=`pwd`
-  cd mariadb
-  while sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/{lock,lock-frontend} >/dev/null 2>&1; do
-    echo 'Waiting for release of dpkg/apt locks...';
-    sleep 5
-  done
-  sudo ./dbmanager.sh install
-  cd $PREV
+  sudo apt --assume-ye install mariadb-server
 
   sudo systemctl stop mariadb
 
